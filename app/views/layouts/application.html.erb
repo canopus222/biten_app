@@ -18,6 +18,11 @@
   </head>
 
   <body>
+    <%= render 'shared/header' %>
     <%= yield %>
+    <%= render 'shared/footer' %>
+
+    <!-- Flowbite JavaScript -->
+    <script src="https://unpkg.com/flowbite@latest/dist/flowbite.bundle.js"></script>
   </body>
 </html>
