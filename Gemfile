@@ -62,3 +62,5 @@ end
 
 # 認証機能
 gem "devise", "~> 4.9", ">= 4.9.4"
+
+gem 'carrierwave', '~> 3.0'
