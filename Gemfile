@@ -62,5 +62,8 @@ end
 
 # 認証機能
 gem "devise", "~> 4.9", ">= 4.9.4"
+gem "devise-i18n"
 
 gem 'carrierwave', '~> 3.0'
+
+gem 'rails-i18n', '~> 7.0.0'
