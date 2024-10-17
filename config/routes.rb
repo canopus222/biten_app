@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: 'users/sessions',
-    registrations: 'registrations',
     registrations: 'users/registrations',
+    passwords: 'users/passwords'
   }
 
   root 'static_pages#top'
@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+  resources :posts, only: %i[new create index show destroy]
 end
