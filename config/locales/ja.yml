@@ -15,3 +15,8 @@ ja:
   activerecord:
     models:
       post: "投稿"
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M"  # デフォルトのフォーマット
+      short: "%m/%d %H:%M"        # 短縮フォーマット
+      long: "%Y/%m/%d %H:%M"      # 長いフォーマット
