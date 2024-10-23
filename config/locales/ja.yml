@@ -8,3 +8,10 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "パスワード（確認用）"
+  defaults:
+    flash_message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}の作成に失敗しました"
+  activerecord:
+    models:
+      post: "投稿"
