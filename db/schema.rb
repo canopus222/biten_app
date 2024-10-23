@@ -18,7 +18,16 @@ ActiveRecord::Schema[7.2].define(version: 2024_10_16_053729) do
     t.bigint "user_id", null: false
     t.string "name", null: false
     t.integer "relationship", null: false
-    t.jsonb "virtues", default: [], null: false
+    t.string "virtue_1", null: false
+    t.string "virtue_2", null: false
+    t.string "virtue_3", null: false
+    t.string "virtue_4", null: false
+    t.string "virtue_5", null: false
+    t.string "virtue_6", null: false
+    t.string "virtue_7", null: false
+    t.string "virtue_8", null: false
+    t.string "virtue_9", null: false
+    t.string "virtue_10", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
