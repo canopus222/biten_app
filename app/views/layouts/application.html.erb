@@ -12,21 +12,26 @@
   </head>
 
   <body>
-    <div class="w-full">
-      <% if user_signed_in? %>
-        <%= render 'shared/header' %>
-      <% else %>
-        <%= render 'shared/before_login_header' %>
-      <% end %>
-    </div>
-
-    <div class="flex-grow container mx-auto"> 
-      <div id="flash">
-        <%= render 'shared/flash_message' %>
+    <div class="text-neutral min-h-screen w-full relative pb-32">
+      <div class="w-full">
+        <% if user_signed_in? %>
+          <%= render 'shared/header' %>
+        <% else %>
+          <%= render 'shared/before_login_header' %>
+        <% end %>
       </div>
-      <%= yield %>
+
+      <div class="flex-grow container mx-auto"> 
+        <div id="flash">
+          <%= render 'shared/flash_message' %>
+        </div>
+        <%= yield %>
+        </div>
+        <div class="absolute bottom-0 w-full">
+          <%= render 'shared/footer' %>
+        </div>
+      </div>
     </div>
-    <%= render 'shared/footer' %>
 
   </body>
 </html>

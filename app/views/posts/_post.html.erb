@@ -1,20 +1,13 @@
-<div class="mb-3 p-4 border rounded-lg">
-  <h4 class="text-2xl font-bold">
-    <%= link_to post.name, '#' %>
-  </h4>
-  <ul class="list-inline">
-    <li><i class="bi bi-person"></i><%= post.user.name %></li> <!-- 投稿者名 -->
-    <li><i class="bi bi-calendar"></i><%= l post.created_at, format: :short %></li> <!-- 投稿日時 -->
-  </ul>
-  <p>本文</p> <!-- 投稿の本文 -->
-  <div class="mt-2">
-    <!-- 編集ボタン -->
-    <%= link_to '#', id: "button-edit-#{post.id}" do %>
-      <i class="bi bi-pencil-fill"></i> 編集
-    <% end %>
-    <!-- 削除ボタン -->
-    <%= link_to '#', id: "button-delete-#{post.id}", method: :delete, data: { confirm: '削除してもよろしいですか？' } do %>
-      <i class="bi bi-trash-fill"></i> 削除
-    <% end %>
+<div class="card bg-base-200 shadow-xl mb-3 h-full" id=<%= "post_#{post.id}" %>>
+  <div class="card-body p-4 pb-0 lg:px-8 lg:pt-6">
+    <div class="flex justify-between items-center"> <!-- フレックスボックスで左右に分ける -->
+      <h4 class="text-2xl font-bold"> <!-- 名前はそのまま -->
+        <%= link_to post.name, post_path(post) %>
+      </h4>
+      <div class="flex items-center space-x-4"> <!-- 投稿者名と日時を右側に並べる -->
+        <div class="text-sm"><i class="bi bi-person"></i> <%= post.user.name %></div>
+        <div class="text-sm">作成日：<%= l post.created_at, format: :long %></div>
+      </div>
+    </div>
   </div>
 </div>
