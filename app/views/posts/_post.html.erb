@@ -5,7 +5,7 @@
         <%= link_to post.name, post_path(post) %>
       </h4>
       <div class="flex items-center space-x-4"> <!-- 投稿者名と日時を右側に並べる -->
-        <div class="text-sm"><i class="bi bi-person"></i> <%= post.user.name %></div>
+        <div class="text-sm"><%= post.user.name %></div>
         <div class="text-sm">作成日：<%= l post.created_at, format: :long %></div>
       </div>
     </div>

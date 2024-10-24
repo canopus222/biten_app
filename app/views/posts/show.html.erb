@@ -37,7 +37,9 @@
     <div class="flex justify-between">
       <%= link_to "戻る", posts_path, class: "bg-teal-500 hover:bg-teal-700 text-white font-bold py-3 px-6 rounded text-lg" %>
       <% if @post.user == current_user %>
-        <%= button_to "削除", post_path(@post), method: :delete, data: { confirm: "削除しますか？" }, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-lg" %>
+        <%= link_to post_path(@post), id: "button-delete-#{@post.id}", data: { turbo_method: :delete, turbo_confirm: "削除しますか？" }, class: "bg-red-500 hover:bg-red-700 text-white font-bold py-3 px-6 rounded text-lg" do %>
+          削除
+        <% end %>
       <% end %>
     </div>
 </div>
