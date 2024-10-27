@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Kaminari.configure do |config|
-  config.default_per_page = 20
+  config.default_per_page = 5
   # config.max_per_page = nil
   # 現在ページを中心に4ページ分のリンクが表示
   config.window = 4
