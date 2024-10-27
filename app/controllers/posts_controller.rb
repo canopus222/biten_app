@@ -1,6 +1,17 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:user).page(params[:page])
+    @q = Post.ransack(params[:q])
+    @posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
+  
+    # 名前と関係性による検索
+    if params[:name].present? || params[:relationship].present?
+      if params[:name].present?
+        @posts = @posts.where("name LIKE ?", "%#{params[:name]}%")
+      end
+      if params[:relationship].present?
+        @posts = @posts.where(relationship: params[:relationship])
+      end
+    end
   end
 
   def new
