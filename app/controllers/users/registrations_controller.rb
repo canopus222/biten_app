@@ -41,8 +41,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
+  # パスワード以外はパスワードを入力しなくても更新できるようにする
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
+
+  # プロフィール更新後のリダイレクト先を変更
+  def after_update_path_for(resource)
+    profile_path
+  end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
   #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
