@@ -41,6 +41,9 @@ Rails.application.configure do
   # caching is enabled.
   config.action_mailer.perform_caching = false
 
+  # メールの送信方法を letter_opener_web に設定
+  config.action_mailer.delivery_method = :letter_opener_web
+  # メール内のリンクを生成するためのホスト設定
   config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
 
   # Print deprecation notices to the Rails logger.
