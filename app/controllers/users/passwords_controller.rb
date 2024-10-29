@@ -1,6 +1,16 @@
 # frozen_string_literal: true
 
 class Users::PasswordsController < Devise::PasswordsController
+  def create
+    self.resource = resource_class.send_reset_password_instructions(resource_params)
+  
+    # メール送信が成功した場合は何もしない
+    return if successfully_sent?(resource)
+  
+    # 入力エラーの場合、エラーメッセージを設定
+    flash[:alert] = "メールアドレスを確認してください" if is_navigational_format?
+    respond_with resource
+  end
   # GET /resource/password/new
   # def new
   #   super
