@@ -78,12 +78,14 @@ Rails.application.configure do
   # caching is enabled.
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { host: 'https://applicable-limpet-kiwako-a7b1bb53.koyeb.app/' }
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default_url_options = { host: "applicable-limpet-kiwako-a7b1bb53.koyeb.app", protocol: "https" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'applicable-limpet-kiwako-a7b1bb53.koyeb.ap',
+    domain:               'applicable-limpet-kiwako-a7b1bb53.koyeb.app',
     user_name:            ENV['MAILER_SENDER'],
     password:             ENV['MAILER_PASSWORD'],
     authentication:       'plain',
